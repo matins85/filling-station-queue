@@ -1,0 +1,50 @@
+<div class="wrapper">
+
+    <div class="button">
+        <button (click)="serveNext()" type="button">Next</button>
+        <button (click)="addCar()" type="button">Add car</button>
+    </div>
+
+    <div class="time-p">
+        <div></div>
+        <div class="time" [class.time-red]="time < 11">{{ time }}</div>
+    </div>
+
+    <div class="card-p">
+        <div class="card">
+            <img src="/assets/images/1298760517.png" alt=""/>
+        </div>
+
+        <div class="card" *ngIf="current">
+            <div class="active">
+                <img src="assets/images/car_topview.png" alt=""/>
+                <div class="car">{{ current?.name }}
+                    {{ current?.id }}</div>
+            </div>
+        </div>
+
+        <div class="card" *ngIf="cars.length === 0 && !current">
+            <div>No Car to serve!</div>
+        </div>
+
+        <div *ngIf="active > 0" class="serving">
+            filling....>
+        </div>
+
+    </div>
+
+    <div class="card-card" *ngIf="cars.length > 0">
+        <p-timeline [value]="cars" styleClass="customized-timeline">
+            <ng-template pTemplate="marker" let-event>
+                <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                    <img src="assets/images/car_topview.png" width="200" class="shadow-2" />
+                </span>
+            </ng-template>
+            <ng-template pTemplate="content" let-event>
+                <p>{{event.name}} {{event.id}}</p>
+            </ng-template>
+        </p-timeline>
+    </div>
+
+</div>
+
