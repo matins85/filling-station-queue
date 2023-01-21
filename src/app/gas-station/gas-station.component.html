@@ -34,16 +34,12 @@
     </div>
 
     <div class="card-card" *ngIf="cars.length > 0">
-        <p-timeline [value]="cars" styleClass="customized-timeline">
-            <ng-template pTemplate="marker" let-event>
-                <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
-                    <img src="assets/images/car_topview.png" width="200" class="shadow-2" />
-                </span>
-            </ng-template>
-            <ng-template pTemplate="content" let-event>
-                <p>{{event.name}} {{event.id}}</p>
-            </ng-template>
-        </p-timeline>
+        <div *ngFor="let car of cars">
+            <span class="custom-marker shadow-2">
+                <img src="assets/images/car_topview.png" class="shadow-2" />
+            </span>
+            <p>{{car.name}} {{car.id}}</p>
+        </div>
     </div>
 
 </div>

@@ -89,7 +89,7 @@
 
 .card-card {
   .shadow-2 {
-    height: 100px;
+    height: 120px;
     width: 100px;
     border-radius: 10px;
   }
@@ -99,6 +99,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    p {
+      margin-left: 10px;
+    }
   }
 }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PrimeIcons } from 'primeng/api';
 
 @Component({
   selector: 'app-gas-station',
@@ -70,7 +69,6 @@ export class GasStationComponent implements OnInit {
     if (this.cars?.length == 0 && !this.current) {
       const get_id = this.cars?.length;
       this.current = { name: 'car', id: get_id + 1 };
-      // this.cars.push({ name: 'car', id: get_id + 1 });
       this.active += 1;
       this.time = 60;
     } else {
@@ -81,32 +79,5 @@ export class GasStationComponent implements OnInit {
 
   ngOnInit(): void {
     this.setTime();
-    this.events1 = [
-      {
-        status: 'Ordered',
-        date: '15/10/2020 10:30',
-        icon: PrimeIcons.SHOPPING_CART,
-        color: '#9C27B0',
-        image: 'game-controller.jpg'
-      },
-      {
-        status: 'Processing',
-        date: '15/10/2020 14:00',
-        icon: PrimeIcons.COG,
-        color: '#673AB7'
-      },
-      {
-        status: 'Shipped',
-        date: '15/10/2020 16:15',
-        icon: PrimeIcons.ENVELOPE,
-        color: '#FF9800'
-      },
-      {
-        status: 'Delivered',
-        date: '16/10/2020 10:00',
-        icon: PrimeIcons.CHECK,
-        color: '#607D8B'
-      }
-    ];
   }
 }
